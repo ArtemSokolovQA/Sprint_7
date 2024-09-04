@@ -21,3 +21,14 @@ class ScooterApi:
     def login_courier(body):
         return requests.post(f'{urls.BASE_URL}{urls.AUTH_COURIER_PATH}', json=body)
 
+    @staticmethod
+    @allure.step('Создать заказ')
+    def create_order(body):
+        return requests.post(f'{urls.BASE_URL}{urls.CREATE_ORDER_PATH}', json=body)
+
+    @staticmethod
+    @allure.step('Получить список заказов')
+    def get_orders_list(params):
+        return requests.get(f'{urls.BASE_URL}{urls.GET_ORDERS_LIST_PATH}', params=params)
+
+

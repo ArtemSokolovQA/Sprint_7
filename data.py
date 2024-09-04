@@ -10,6 +10,8 @@ class DataTestCreateCourier:
         "firstName": "saske"
     }
 
+    courier_id = 377684
+
     register_courier_body_empty_login = {
         "login": "",
         "password": "1234",
@@ -37,3 +39,36 @@ class DataTestLoginCourier:
         "login": "ninjaTester",
         "password": ""
     }
+
+    login_courier_body_wrong_password = {
+        "login": "ninjaTester",
+        "password": "12345"
+    }
+
+    login_courier_body_wrong_login = {
+        "login": "ninjaQA",
+        "password": "12345"
+    }
+
+
+class DataTestCreateOrder:
+    create_order_body = {
+        "firstName": "Naruto",
+        "lastName": "Uchiha",
+        "address": "Konoha, 142 apt.",
+        "metroStation": 4,
+        "phone": "+7 800 355 35 35",
+        "rentTime": 5,
+        "deliveryDate": "2020-06-06",
+        "comment": "Saske, come back to Konoha",
+        "color": [
+            "BLACK"
+        ]
+    }
+
+    colors_list = [['BLACK', 'GREY'],  ['BLACK'], ['GREY'], []]
+
+
+class DataTestOrdersList:
+
+    query_params = {'id': ''}
