@@ -27,3 +27,13 @@ class DataTestLoginCourier:
         "login": "ninjaTester",
         "password": "1234"
     }
+
+    login_courier_body_empty_login = {
+        "login": "",
+        "password": "1234"
+    }
+
+    login_courier_body_empty_password = {
+        "login": "ninjaTester",
+        "password": ""
+    }
