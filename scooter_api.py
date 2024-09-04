@@ -1,6 +1,6 @@
 import allure
 import requests
-from data import TestCreateCourier
+from data import DataTestCreateCourier
 import urls
 
 
@@ -15,4 +15,9 @@ class ScooterApi:
     @allure.step('Удалить курьера')
     def delete_courier(courier_id):
         return requests.delete(f'{urls.BASE_URL}{urls.DELETE_COURIER_PATH}', params=courier_id)
+
+    @staticmethod
+    @allure.step('Авторизовать курьера')
+    def login_courier(body):
+        return requests.post(f'{urls.BASE_URL}{urls.AUTH_COURIER_PATH}', json=body)
 

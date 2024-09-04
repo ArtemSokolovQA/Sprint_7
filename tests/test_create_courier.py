@@ -1,9 +1,9 @@
 import allure
-
 import data
 from helper import TestDataHelper
 import pytest
 from scooter_api import ScooterApi
+from data import DataTestCreateCourier
 
 
 class TestCreateCourier:
@@ -23,5 +23,18 @@ class TestCreateCourier:
         assert response_2.status_code == 409
         assert response_2.json()['code'] == 409
         assert response_2.json()['message'] == 'Этот логин уже используется. Попробуйте другой.'
+
+    @allure.title('Невозможно создать курьера с незаполненнным полем login')
+    def test_impossible_to_create_courier_if_login_field_is_empty(self):
+        response = ScooterApi.create_courier(DataTestCreateCourier.register_courier_body_empty_login)
+        assert response.status_code == 400
+        assert response.json()['message'] == 'Недостаточно данных для создания учетной записи'
+
+    @allure.title('Невозможно создать курьера с незаполненнным полем password')
+    def test_impossible_to_create_courier_if_password_field_is_empty(self):
+        response = ScooterApi.create_courier(DataTestCreateCourier.register_courier_body_empty_password)
+        assert response.status_code == 400
+        assert response.json()['message'] == 'Недостаточно данных для создания учетной записи'
+
 
 

@@ -1,4 +1,4 @@
-from data import TestCreateCourier
+from data import DataTestCreateCourier
 from faker import Faker
 
 
@@ -6,7 +6,7 @@ class TestDataHelper:
 
     @staticmethod
     def modify_create_courier_body(key, value):
-        body = TestCreateCourier.register_courier_body.copy()
+        body = DataTestCreateCourier.register_courier_body.copy()
         body[key] = value
         return body
 
