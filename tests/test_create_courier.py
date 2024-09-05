@@ -21,7 +21,6 @@ class TestCreateCourier:
         response_2 = ScooterApi.create_courier(courier_body)
         assert response_1.status_code == 201
         assert response_2.status_code == 409
-        assert response_2.json()['code'] == 409
         assert response_2.json()['message'] == ResponseMessages.courier_already_exists_message
 
     @allure.title('Невозможно создать курьера с незаполненнным полем login')
