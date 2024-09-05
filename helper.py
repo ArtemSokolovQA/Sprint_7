@@ -10,7 +10,6 @@ class TestDataHelper:
         body[key] = value
         return body
 
-    @staticmethod
-    def generate_create_courier_body():
+    def generate_create_courier_body(self):
         fake = Faker()
-        return TestDataHelper.modify_create_courier_body('login', fake.user_name()[:7])
+        return self.modify_create_courier_body('login', fake.user_name()[:7])
