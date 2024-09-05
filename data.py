@@ -72,3 +72,11 @@ class DataTestCreateOrder:
 class DataTestOrdersList:
 
     query_params = {'id': ''}
+
+
+class ResponseMessages:
+
+    courier_already_exists_message = 'Этот логин уже используется. Попробуйте другой.'
+    not_enough_data_to_register_message = 'Недостаточно данных для создания учетной записи'
+    not_enough_data_to_login_message = 'Недостаточно данных для входа'
+    account_not_found_message = 'Учетная запись не найдена'
