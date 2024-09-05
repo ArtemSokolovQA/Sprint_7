@@ -1,6 +1,5 @@
 import allure
 import requests
-from data import DataTestCreateCourier
 import urls
 
 

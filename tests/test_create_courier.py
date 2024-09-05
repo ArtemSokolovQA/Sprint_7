@@ -1,7 +1,5 @@
 import allure
-import data
 from helper import TestDataHelper
-import pytest
 from scooter_api import ScooterApi
 from data import DataTestCreateCourier, ResponseMessages
 
